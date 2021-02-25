@@ -33,8 +33,7 @@ print ("[+] THIS SCRIPT CODDED BY ALIILAPRO")
 print ("[-] SITE: aliilapro.github.io") 
 print ("[-] TELEGRAM: aliilapro")
 print ("--------")
-
-StartTime = time.time()
+referrer = input("[#] Enter the WARP+ ID:")
 def genString(stringLength):
 	try:
 		letters = string.ascii_letters + string.digits
@@ -92,14 +91,7 @@ while True:
 		print(f"[:)] {g} GB has been successfully added to your account.")
 		print(f"[#] Total: {g} Good {b} Bad")
 		print("[*] After 18 seconds, a new request will be sent.")
-		uptime = readable_time.get_readable_time((time.time() - StartTime))
-		uro = f'https://api.telegram.org/bot{token}/sendMessage'
-		values = {'chat_id': LOG_CHAT_ID,'text': f"\n{g} GB has been successfully added to your account." + f"\nTotal: {g} Good {b} Bad" + f"\nBot uptime: {uptime}" + "\nAfter 18 seconds, a new request will be sent."}
-		dat = urllib.parse.urlencode(values)
-		dat = dat.encode('ascii')
-		rek = urllib.request.Request(uro, dat)
-		urllib.request.urlopen(rek)
-		time.sleep(18)
+		time.sleep(5)
 	else:
 		b = b + 1
 		os.system('cls' if os.name == 'nt' else 'clear')
@@ -107,5 +99,5 @@ while True:
 		print("                  WARP-PLUS-CLOUDFLARE (script)" + " By ALIILAPRO")
 		print("")
 		print("[:(] Error when connecting to server.")
-		print(f"[#] Total: {g} Good {b} Bad")
+		print(f"[#] Total: {g} Good {b} Bad")	
 		urllib.request.urlopen(f"https://api.telegram.org/bot{token}/editMessageText?chat_id={LOG_CHAT_ID}&message_id=16&text=Bad")
